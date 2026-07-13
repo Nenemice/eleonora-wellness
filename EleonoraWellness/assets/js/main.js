@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",()=>{const y=document.getElementById("currentYear");if(y)y.textContent=new Date().getFullYear();document.querySelectorAll("[data-track]").forEach(el=>el.addEventListener("click",()=>{window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:"cta_click",cta_name:el.dataset.track,cta_text:el.textContent.trim()})}))});
