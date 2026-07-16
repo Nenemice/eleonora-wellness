@@ -12,63 +12,18 @@
 /* pagine interne */
 .coming-page,.inner-page{min-height:100vh;color:var(--white);background:radial-gradient(circle at top right,#4c1849 0%,#140d13 45%,#070707 100%)}.coming-page{display:grid;place-items:center;padding:40px 20px}.coming-box{max-width:760px;padding:48px;text-align:center;border:1px solid rgba(200,164,107,.35);border-radius:28px;background:rgba(0,0,0,.45)}.coming-logo{display:inline-flex;margin:0 auto 2rem}.coming-box h1,.inner-page h1{margin:0 0 1rem;font-family:Georgia,"Times New Roman",serif;font-size:clamp(2.8rem,6vw,5rem);font-weight:400}.coming-box p,.inner-page p{color:rgba(255,255,255,.82);line-height:1.7}.event-info-box{max-width:760px;margin-top:2rem;padding:32px;border:1px solid rgba(200,164,107,.35);border-radius:24px;background:rgba(0,0,0,.35)}.contact-form{display:grid;max-width:760px;gap:1rem;margin-top:2rem}.contact-form label{display:grid;gap:.45rem;color:var(--gold-light);font-size:.85rem;font-weight:600}.contact-form input,.contact-form textarea{width:100%;padding:.9rem 1rem;border:1px solid rgba(200,164,107,.35);border-radius:14px;color:var(--white);background:rgba(255,255,255,.06);outline:none}.contact-form input:focus,.contact-form textarea:focus{border-color:var(--magenta)}
 
-/* Home refinements: sticky navigation, visual logo, event poster and Google reviews */
+/* Home refinements: fixed navigation, complete logo, event poster and reviews */
 .site-header{position:fixed;background:#070707}.navbar{background:rgba(7,7,7,.94);backdrop-filter:blur(12px)}
-.brand-logo{display:flex;width:154px;height:76px;align-items:center;margin-right:1.5rem;padding:0;overflow:hidden}
-.brand-logo img{width:154px;height:154px;max-width:none;object-fit:cover;object-position:center 60%}
-.hero-person{right:-5%;bottom:0;width:min(112%,960px);max-height:calc(clamp(500px,58vh,630px) + 35px)}
+.brand-logo{display:flex;width:96px;height:76px;align-items:center;justify-content:flex-start;margin-right:1.25rem;padding:0;overflow:visible}
+.brand-logo img{width:76px;height:76px;max-width:100%;object-fit:contain;object-position:center;transform:none}
+.hero-person{right:-4%;bottom:-35px;width:960px;max-width:none;max-height:610px}
 .event-quick-card{display:grid;grid-template-columns:100px minmax(0,1fr);gap:16px}
 .event-poster-link{align-self:stretch;min-height:168px;overflow:hidden;border:1px solid rgba(200,164,107,.45);border-radius:12px}
 .event-poster-thumb{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .25s ease}
 .event-poster-link:hover .event-poster-thumb{transform:scale(1.04)}
-.event-card-copy{min-width:0}
-.review-actions{display:flex;align-items:center;flex-wrap:wrap;gap:.65rem}
-.review-write-link{color:var(--gold-light);font-size:.68rem;font-weight:600;text-decoration:underline;text-underline-offset:3px}
-.review-write-link:hover{color:var(--white)}
-@media(max-width:1199.98px){.brand-logo{width:118px}.brand-logo img{width:130px;height:130px}.hero-person{right:-12%;width:850px}.event-quick-card{grid-template-columns:82px minmax(0,1fr);gap:12px}}
-@media(max-width:991.98px){.brand-logo{width:132px}.brand-logo img{width:140px;height:140px}.event-quick-card{grid-template-columns:120px minmax(0,1fr)}}
-@media(max-width:575.98px){.brand-logo{width:112px}.brand-logo img{width:122px;height:122px}.event-quick-card{grid-template-columns:88px minmax(0,1fr);gap:12px}.event-poster-link{min-height:150px}.review-actions{align-items:flex-start;flex-direction:column}}
-
-/* Header logo and hero scale fine tuning */
-.brand-logo{width:205px;height:76px;margin-right:1.1rem}
-.brand-logo img{width:205px;height:205px;object-position:center 69%}
-.hero-person{right:-6%;width:1100px;max-width:none;max-height:calc(clamp(500px,58vh,630px) + 75px)}
-@media(max-width:1399.98px){.brand-logo{width:172px}.brand-logo img{width:180px;height:180px}.hero-person{right:-10%;width:980px}}
-@media(max-width:1199.98px){.brand-logo{width:128px}.brand-logo img{width:142px;height:142px}.hero-person{right:-16%;width:900px}}
-@media(max-width:991.98px){.brand-logo{width:142px}.brand-logo img{width:152px;height:152px}.hero-person{right:-16%;width:980px}}
-@media(max-width:575.98px){.brand-logo{width:122px}.brand-logo img{width:134px;height:134px}.hero-person{right:-47%;width:940px}}
-
-/* Final visual balance: readable wordmark and breathing room above portrait */
-.brand-logo{width:210px}
-.brand-logo img{width:210px;height:210px;object-position:center 82%}
-.hero-person{right:-5%;bottom:0;width:1020px;max-width:none;max-height:650px}
-@media(max-width:1399.98px){.brand-logo{width:175px}.brand-logo img{width:184px;height:184px;object-position:center 82%}.hero-person{right:-9%;width:930px}}
-@media(max-width:1199.98px){.brand-logo{width:132px}.brand-logo img{width:146px;height:146px;object-position:center 82%}.hero-person{right:-13%;width:860px}}
-@media(max-width:991.98px){.brand-logo{width:145px}.brand-logo img{width:156px;height:156px;object-position:center 82%}.hero-person{right:-13%;width:920px}}
-@media(max-width:575.98px){.brand-logo{width:124px}.brand-logo img{width:136px;height:136px;object-position:center 82%}.hero-person{right:-42%;width:880px}}
-
-/* Precise desktop crop and portrait spacing */
-.brand-logo{width:170px;height:76px}
-.brand-logo img{width:170px;height:170px;max-width:none;object-fit:contain;transform:translateY(-52px)}
-.hero-person{right:-5%;bottom:0;width:985px;max-width:none;max-height:625px}
-@media(max-width:1399.98px){.brand-logo{width:150px}.brand-logo img{width:158px;height:158px;transform:translateY(-48px)}.hero-person{right:-8%;width:900px}}
-@media(max-width:1199.98px){.brand-logo{width:122px}.brand-logo img{width:132px;height:132px;transform:translateY(-40px)}.hero-person{right:-12%;width:840px}}
-@media(max-width:991.98px){.brand-logo{width:132px}.brand-logo img{width:142px;height:142px;transform:translateY(-43px)}.hero-person{right:-12%;width:890px}}
-@media(max-width:575.98px){.brand-logo{width:112px}.brand-logo img{width:122px;height:122px;transform:translateY(-36px)}.hero-person{right:-39%;width:850px}}
-
-/* Requested final proportions: compact logo and clear gap below fixed menu */
-.brand-logo{width:135px;height:76px;margin-right:1rem}
-.brand-logo img{width:135px;height:135px;transform:translateY(-40px)}
-.hero-person{right:-4%;bottom:-35px;width:960px;max-width:none;max-height:610px}
-@media(max-width:1399.98px){.brand-logo{width:122px}.brand-logo img{width:128px;height:128px;transform:translateY(-38px)}.hero-person{right:-7%;bottom:-28px;width:880px}}
-@media(max-width:1199.98px){.brand-logo{width:108px}.brand-logo img{width:116px;height:116px;transform:translateY(-34px)}.hero-person{right:-10%;bottom:-22px;width:820px}}
-@media(max-width:991.98px){.brand-logo{width:118px}.brand-logo img{width:126px;height:126px;transform:translateY(-37px)}.hero-person{right:-10%;bottom:-20px;width:860px}}
-@media(max-width:575.98px){.brand-logo{width:100px}.brand-logo img{width:108px;height:108px;transform:translateY(-31px)}.hero-person{right:-36%;bottom:auto;width:820px}}
-
-/* Horizontal wordmark crop for a clear navbar logo */
-.brand-logo{width:175px;height:76px;margin-right:1.25rem;overflow:hidden}
-.brand-logo img{width:175px;height:76px;max-width:none;object-fit:cover;object-position:center 65%;transform:none}
-@media(max-width:1399.98px){.brand-logo{width:155px}.brand-logo img{width:155px;height:72px;object-position:center 65%;transform:none}}
-@media(max-width:1199.98px){.brand-logo{width:125px}.brand-logo img{width:125px;height:68px;object-position:center 65%;transform:none}}
-@media(max-width:991.98px){.brand-logo{width:145px}.brand-logo img{width:145px;height:72px;object-position:center 65%;transform:none}}
-@media(max-width:575.98px){.brand-logo{width:120px}.brand-logo img{width:120px;height:66px;object-position:center 65%;transform:none}}
+.event-card-copy{min-width:0}.review-actions{display:flex;align-items:center;flex-wrap:wrap;gap:.65rem}
+.review-write-link{color:var(--gold-light);font-size:.68rem;font-weight:600;text-decoration:underline;text-underline-offset:3px}.review-write-link:hover{color:var(--white)}
+@media(max-width:1399.98px){.brand-logo{width:88px}.brand-logo img{width:72px;height:72px}.hero-person{right:-7%;bottom:-28px;width:880px}}
+@media(max-width:1199.98px){.brand-logo{width:78px}.brand-logo img{width:68px;height:68px}.hero-person{right:-10%;bottom:-22px;width:820px}.event-quick-card{grid-template-columns:82px minmax(0,1fr);gap:12px}}
+@media(max-width:991.98px){.brand-logo{width:88px}.brand-logo img{width:72px;height:72px}.hero-person{right:-10%;bottom:-20px;width:860px}.event-quick-card{grid-template-columns:120px minmax(0,1fr)}}
+@media(max-width:575.98px){.brand-logo{width:76px}.brand-logo img{width:64px;height:64px}.hero-person{right:-36%;bottom:auto;width:820px}.event-quick-card{grid-template-columns:88px minmax(0,1fr);gap:12px}.event-poster-link{min-height:150px}.review-actions{align-items:flex-start;flex-direction:column}}
