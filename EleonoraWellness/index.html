@@ -22,8 +22,8 @@
   <header class="site-header">
     <nav class="navbar navbar-expand-xl navbar-dark" aria-label="Navigazione principale">
       <div class="container-fluid page-shell">
-        <a class="navbar-brand text-logo" href="index.html" aria-label="Eleonora Wellness - Home">
-          <span class="logo-name">Eleonora</span><span class="logo-wellness">Wellness</span>
+        <a class="navbar-brand brand-logo" href="index.html" aria-label="Eleonora Wellness - Home">
+          <img src="assets/images/logo-eleonora-wellness.webp" alt="Eleonora Wellness" width="420" height="420">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Apri il menu"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse justify-content-end" id="mainMenu">
@@ -74,12 +74,17 @@
     <section class="quick-panels" aria-label="In evidenza">
       <div class="container-fluid page-shell">
         <div class="quick-grid">
-          <article class="quick-card">
-            <div class="quick-card-header"><h2>Prossimo evento</h2><span aria-hidden="true">✿</span></div>
-            <p class="quick-kicker">Wellness Experience</p>
-            <h3>Domenica 19 luglio 2026</h3>
-            <p>Taino, Lago Maggiore · Movimento, relax e aperitivo al tramonto.</p>
-            <a class="btn btn-card-outline" href="eventi.html">Scopri l'evento</a>
+          <article class="quick-card event-quick-card">
+            <a class="event-poster-link" href="eventi.html" aria-label="Scopri la Wellness Experience del 19 luglio 2026">
+              <img class="event-poster-thumb" src="assets/images/locandina-wellness-experience.webp" alt="Locandina Sunset Wellness Experience" width="420" height="596">
+            </a>
+            <div class="event-card-copy">
+              <div class="quick-card-header"><h2>Prossimo evento</h2><span aria-hidden="true">✿</span></div>
+              <p class="quick-kicker">Wellness Experience</p>
+              <h3>Domenica 19 luglio 2026</h3>
+              <p>Taino, Lago Maggiore · Movimento, relax e aperitivo al tramonto.</p>
+              <a class="btn btn-card-outline" href="eventi.html">Scopri l'evento</a>
+            </div>
           </article>
           <article class="quick-card" id="chi-sono">
             <div class="quick-card-header"><h2>Chi sono</h2><span aria-hidden="true">✿</span></div>
@@ -88,9 +93,9 @@
           </article>
           <article class="quick-card" id="recensioni">
             <div class="quick-card-header"><h2>Recensioni Google</h2><span aria-hidden="true">✿</span></div>
-            <div class="google-rating"><span class="google-g">G</span><div><div class="stars" aria-label="Cinque stelle">★★★★★</div><strong>Recensioni verificate su Google</strong></div></div>
+            <div class="google-rating"><span class="google-g">G</span><div><div class="stars" aria-label="Cinque stelle">★★★★★</div><strong>Valutazione 5,0 su Google</strong></div></div>
             <p>Leggi cosa raccontano le persone che hanno scelto i miei percorsi e le Wellness Experience.</p>
-            <a class="btn btn-card-outline" target="_blank" rel="noopener noreferrer" href="https://g.page/r/CVtw4mp88mEpEAE/review">Leggi o lascia una recensione</a>
+            <div class="review-actions"><a class="btn btn-card-outline" target="_blank" rel="noopener noreferrer" href="https://maps.app.goo.gl/sXKbxazbgANV4qG49">Leggi le recensioni su Google</a><a class="review-write-link" target="_blank" rel="noopener noreferrer" href="https://g.page/r/CVtw4mp88mEpEAE/review">Lascia una recensione</a></div>
           </article>
         </div>
       </div>
