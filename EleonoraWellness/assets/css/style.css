@@ -55,3 +55,12 @@
 @media(max-width:1199.98px){.brand-logo{width:122px}.brand-logo img{width:132px;height:132px;transform:translateY(-40px)}.hero-person{right:-12%;width:840px}}
 @media(max-width:991.98px){.brand-logo{width:132px}.brand-logo img{width:142px;height:142px;transform:translateY(-43px)}.hero-person{right:-12%;width:890px}}
 @media(max-width:575.98px){.brand-logo{width:112px}.brand-logo img{width:122px;height:122px;transform:translateY(-36px)}.hero-person{right:-39%;width:850px}}
+
+/* Requested final proportions: compact logo and clear gap below fixed menu */
+.brand-logo{width:135px;height:76px;margin-right:1rem}
+.brand-logo img{width:135px;height:135px;transform:translateY(-40px)}
+.hero-person{right:-4%;bottom:-35px;width:960px;max-width:none;max-height:610px}
+@media(max-width:1399.98px){.brand-logo{width:122px}.brand-logo img{width:128px;height:128px;transform:translateY(-38px)}.hero-person{right:-7%;bottom:-28px;width:880px}}
+@media(max-width:1199.98px){.brand-logo{width:108px}.brand-logo img{width:116px;height:116px;transform:translateY(-34px)}.hero-person{right:-10%;bottom:-22px;width:820px}}
+@media(max-width:991.98px){.brand-logo{width:118px}.brand-logo img{width:126px;height:126px;transform:translateY(-37px)}.hero-person{right:-10%;bottom:-20px;width:860px}}
+@media(max-width:575.98px){.brand-logo{width:100px}.brand-logo img{width:108px;height:108px;transform:translateY(-31px)}.hero-person{right:-36%;bottom:auto;width:820px}}
