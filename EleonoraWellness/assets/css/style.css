@@ -712,3 +712,107 @@ button.btn{
   a.btn,button.btn{width:min(220px,100%)!important;min-width:min(220px,100%)!important;max-width:min(220px,100%)!important;flex-basis:min(220px,100%)!important}
   .hero-buttons,.cta-buttons,.contact-actions,.review-actions{align-items:center!important}
 }
+
+/* Icone specifiche nei riquadri: sostituiscono definitivamente le spunte */
+.detail-icon-grid li[data-icon="mat"]::before{content:"🧘‍♀️"}
+.detail-icon-grid li[data-icon="clothing"]::before{content:"👕"}
+.detail-icon-grid li[data-icon="shoes"]::before{content:"👟"}
+.detail-icon-grid li[data-icon="water"]::before{content:"💧"}
+.detail-icon-grid li[data-icon="swim"]::before{content:"🏊‍♀️"}
+.detail-icon-grid li[data-icon="sandals"]::before{content:"🩴"}
+.detail-icon-grid li[data-icon="shower"]::before{content:"🚿"}
+.detail-icon-grid li[data-icon="bag"]::before{content:"👜"}
+.detail-icon-grid li[data-icon="energy"]::before{content:"⚡"}
+.detail-icon-grid li[data-icon="relax"]::before{content:"🌿"}
+.detail-icon-grid li[data-icon="movement"]::before{content:"🤸‍♀️"}
+.detail-icon-grid li[data-icon="community"]::before{content:"👭"}
+.detail-icon-grid li[data-icon="heart"]::before{content:"💗"}
+.detail-icon-grid li[data-icon="lake"]::before{content:"🌅"}
+
+/* Home hero: sfumatura viola creativa al posto del nero netto */
+.hero-section{
+  background:
+    radial-gradient(circle at 18% 34%,rgba(157,52,145,.38),transparent 34rem),
+    linear-gradient(135deg,#4f244b 0%,#32152f 42%,#160d17 100%);
+}
+.hero-shade{
+  background:
+    radial-gradient(ellipse at 20% 45%,rgba(179,11,104,.22),transparent 38%),
+    radial-gradient(ellipse at 4% 12%,rgba(142,44,140,.30),transparent 30%),
+    linear-gradient(90deg,rgba(56,24,53,.98) 0%,rgba(66,30,61,.92) 28%,rgba(37,20,36,.62) 48%,rgba(15,9,14,.12) 72%,transparent 100%);
+}
+
+/* Home: contenitore uniforme, immagini più grandi e contenuti realmente centrati */
+.quick-panels{
+  margin-top:0;
+  padding:24px 0 32px;
+  background:linear-gradient(180deg,#452440 0%,#321a31 100%);
+}
+.quick-grid{
+  align-items:stretch;
+  overflow:hidden;
+  border:1px solid rgba(224,183,116,.30);
+  border-radius:22px;
+  background:linear-gradient(145deg,#65385d,#462640);
+  box-shadow:0 20px 48px rgba(28,10,27,.24);
+}
+.quick-card{
+  min-height:440px;
+  padding:26px;
+  align-items:center;
+  justify-content:flex-start;
+  overflow:hidden;
+  text-align:center;
+}
+.quick-card-header{width:100%;margin-bottom:14px}
+.quick-card p{max-width:520px;text-align:center}
+.quick-about-body{
+  display:flex;
+  height:100%;
+  flex:1;
+  flex-direction:column;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+.quick-about-body>img{
+  width:190px;
+  height:245px;
+  flex:0 0 auto;
+  border-radius:18px;
+  object-fit:cover;
+}
+.quick-about-copy{display:flex;flex:1;flex-direction:column;align-items:center;justify-content:space-between}
+.home-event-slide{
+  grid-template-columns:155px minmax(0,1fr);
+  gap:20px;
+}
+.event-poster-link{
+  width:155px;
+  height:230px;
+  border-radius:16px;
+}
+.event-poster-thumb{object-fit:cover}
+.event-card-copy{justify-content:center}
+.home-event-community{margin-top:auto}
+.google-rating{justify-content:center}
+.review-actions{margin-top:auto}
+
+/* Corregge la deformazione verticale: la base flessibile non deve usare la larghezza */
+a.btn,button.btn{flex:0 0 auto!important}
+
+@media(max-width:991.98px){
+  .hero-shade{
+    background:
+      radial-gradient(ellipse at 24% 42%,rgba(168,45,149,.32),transparent 42%),
+      linear-gradient(180deg,rgba(61,27,57,.55) 0%,rgba(49,22,46,.72) 48%,rgba(25,13,24,.96) 100%);
+  }
+  .quick-card{min-height:auto}
+}
+@media(max-width:575.98px){
+  .quick-panels{padding:18px 0 24px}
+  .quick-card{padding:24px 18px}
+  .quick-about-body>img{width:175px;height:225px}
+  .home-event-slide{grid-template-columns:1fr}
+  .event-poster-link{width:165px;height:245px;margin-inline:auto}
+}
