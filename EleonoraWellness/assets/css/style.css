@@ -374,3 +374,77 @@ body{
 .facts-grid.icon-card-grid>div{padding:14px 14px 14px 58px}
 .specialty-grid.detail-icon-grid li,.check-grid.detail-icon-grid li{padding:11px 12px 11px 52px}
 @media(max-width:991.98px){.navbar{background:linear-gradient(145deg,rgba(61,31,58,.985),rgba(79,37,69,.98))}}
+
+/* Emoji a colori: più leggibili e calde rispetto ai precedenti glifi monocromatici */
+.detail-icon-grid li::before,.icon-card-grid>div::before{
+  display:grid;flex:0 0 auto;width:46px;height:46px;place-items:center;margin:0;
+  border:1px solid rgba(177,76,139,.2);border-radius:50%;color:initial;
+  background:linear-gradient(145deg,#fff,#f5e5ef);box-shadow:0 8px 20px rgba(73,32,65,.13);
+  font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif;
+  font-size:1.45rem;font-weight:400;line-height:1;
+}
+.icon-card-grid>div::before{width:50px;height:50px;font-size:1.55rem}
+[data-icon="calendar"]::before{content:"📅"}[data-icon="clock"]::before{content:"⏰"}
+[data-icon="location"]::before{content:"📍"}[data-icon="ticket"]::before{content:"🎟️"}
+[data-icon="mat"]::before{content:"🧘‍♀️"}[data-icon="clothing"]::before{content:"👕"}
+[data-icon="shoes"]::before{content:"👟"}[data-icon="water"]::before{content:"💧"}
+[data-icon="swim"]::before{content:"🏊‍♀️"}[data-icon="sandals"]::before{content:"🩴"}
+[data-icon="shower"]::before{content:"🚿"}[data-icon="bag"]::before{content:"👜"}
+[data-icon="energy"]::before{content:"⚡"}[data-icon="relax"]::before{content:"🌿"}
+[data-icon="movement"]::before{content:"🤸‍♀️"}[data-icon="community"]::before{content:"👥"}
+[data-icon="heart"]::before{content:"💗"}[data-icon="lake"]::before{content:"🌅"}
+[data-icon="weights"]::before{content:"🏋️‍♀️"}[data-icon="body"]::before{content:"🤸‍♀️"}
+[data-icon="yoga"]::before{content:"🧘‍♀️"}[data-icon="posture"]::before{content:"🧍‍♀️"}
+[data-icon="breath"]::before{content:"🌬️"}
+
+/* Sezioni luminose alternate, applicate senza duplicare il markup delle pagine */
+body[data-page="chi-sono"] .content-section:first-of-type,
+body[data-page="eventi"] .events-overview,
+.event-detail .event-detail-hero + .event-facts + .content-section,
+.event-detail .gallery-section,
+body[data-page="contatti"] .contact-content{
+  color:#3b2437;
+  background:radial-gradient(circle at 92% 4%,rgba(194,60,145,.12),transparent 25rem),radial-gradient(circle at 5% 95%,rgba(209,172,105,.11),transparent 22rem),linear-gradient(135deg,#fffafd 0%,#f4e8f0 54%,#fffdfb 100%);
+}
+body[data-page="chi-sono"] .content-section:first-of-type h2,
+.event-detail .event-detail-hero + .event-facts + .content-section h2,
+.event-detail .event-detail-hero + .event-facts + .content-section h3,
+.event-detail .gallery-section h2,
+body[data-page="contatti"] .contact-content h2,
+body[data-page="contatti"] .contact-content h3{color:#4b2945}
+body[data-page="chi-sono"] .content-section:first-of-type p,
+.event-detail .event-detail-hero + .event-facts + .content-section p,
+.event-detail .gallery-section p,
+body[data-page="contatti"] .contact-content p,
+body[data-page="eventi"] .events-overview p{color:#654f61}
+body[data-page="chi-sono"] .content-section:first-of-type .eyebrow,
+.event-detail .event-detail-hero + .event-facts + .content-section .eyebrow,
+.event-detail .event-detail-hero + .event-facts + .content-section time,
+body[data-page="eventi"] .events-overview .eyebrow{color:#a80c73}
+.event-detail .event-detail-hero + .event-facts + .content-section article{border-color:rgba(100,52,91,.16)}
+body[data-page="eventi"] .events-overview .events-column,
+body[data-page="eventi"] .events-overview .event-list-card,
+body[data-page="contatti"] .contact-content .form-card,
+body[data-page="contatti"] .contact-content .info-card{
+  border-color:rgba(112,57,101,.16);background:rgba(255,255,255,.72);box-shadow:0 18px 45px rgba(77,37,69,.12);
+}
+body[data-page="contatti"] .contact-content label{color:#6d3864}
+body[data-page="contatti"] .contact-content input,
+body[data-page="contatti"] .contact-content select,
+body[data-page="contatti"] .contact-content textarea{border-color:rgba(112,57,101,.25);color:#3b2437;background:rgba(255,255,255,.9)}
+body[data-page="contatti"] .contact-content .privacy-note{color:#776473!important}
+
+/* Il nero del file del logo prende visivamente il colore dello sfondo porpora. */
+.brand-logo img,.footer-logo-image{mix-blend-mode:screen}.site-header,.site-footer{isolation:isolate}
+
+/* Locandina più grande nella pagina evento e nelle schede della pagina Eventi */
+.event-detail-grid{grid-template-columns:minmax(0,1fr) minmax(360px,440px)}
+.event-detail-grid>img{width:100%;max-height:570px;object-fit:contain}
+.events-column .event-list-card{grid-template-columns:155px minmax(0,1fr)}
+.events-column .event-list-image img{height:245px}
+
+/* Le pagine Coming Soon mostrano un pannello chiaro alternato al fondale porpora. */
+.coming-box{color:#3b2437;border-color:rgba(112,57,101,.2);background:linear-gradient(145deg,rgba(255,255,255,.96),rgba(244,229,239,.96))}
+.coming-box h1{color:#4b2945}.coming-box p,.coming-box .muted-copy{color:#685263}
+@media(max-width:991.98px){.event-detail-grid{grid-template-columns:1fr}.event-detail-grid>img{max-width:440px}}
+@media(max-width:575.98px){.detail-icon-grid li::before{width:42px;height:42px;font-size:1.3rem}.events-column .event-list-card{grid-template-columns:105px minmax(0,1fr)}.events-column .event-list-image img{height:190px}}
