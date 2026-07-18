@@ -49,6 +49,32 @@ function activateHomeCarousel(container) {
   container.querySelector("[data-event-next]").addEventListener("click", () => show(index + 1));
 }
 
+function activatePageCarousel(container) {
+  const track = container.querySelector("[data-page-event-track]");
+  const slides = [...container.querySelectorAll(".page-event-slide")];
+  if (!track || slides.length < 2) return;
+  let index = 0;
+  const show = (newIndex) => {
+    index = (newIndex + slides.length) % slides.length;
+    track.style.transform = `translateX(-${index * 100}%)`;
+    container.querySelector("[data-page-event-count]").textContent = `${index + 1} / ${slides.length}`;
+  };
+  container.querySelector("[data-page-event-prev]").addEventListener("click", () => show(index - 1));
+  container.querySelector("[data-page-event-next]").addEventListener("click", () => show(index + 1));
+}
+
+function renderPageEvents(container, events, past = false) {
+  if (!events.length) {
+    container.innerHTML = past
+      ? '<div class="empty-events compact-empty"><p>Qui troverai le Wellness Experience concluse.</p></div>'
+      : `<div class="empty-events compact-empty"><h3>Nuove Wellness Experience saranno annunciate a breve!</h3><p>Nel frattempo entra nella Community WhatsApp per ricevere gli aggiornamenti in anteprima.</p><a class="btn btn-community" data-community-link href="${ELEONORA_COMMUNITY}" target="_blank" rel="noopener noreferrer">Entra nella Community</a></div>`;
+    return;
+  }
+  const controls = events.length > 1 ? `<div class="page-event-controls"><button type="button" data-page-event-prev aria-label="Evento precedente">←</button><span data-page-event-count>1 / ${events.length}</span><button type="button" data-page-event-next aria-label="Evento successivo">→</button></div>` : "";
+  container.innerHTML = `<div class="page-event-viewport"><div class="page-event-track" data-page-event-track>${events.map((event) => `<div class="page-event-slide">${eventCard(event, past)}</div>`).join("")}</div></div>${controls}`;
+  activatePageCarousel(container);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("[data-community-link]").forEach((link) => link.href = ELEONORA_COMMUNITY);
   const now = new Date();
@@ -81,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const upcomingGrid = document.querySelector("[data-upcoming-events]");
-  if (upcomingGrid) upcomingGrid.innerHTML = future.length ? future.map((event) => eventCard(event)).join("") : '<div class="empty-events"><span class="eyebrow">Coming soon</span><h3>Nuove esperienze sono in arrivo.</h3><p>Entra nella Community WhatsApp per ricevere tutti gli aggiornamenti.</p></div>';
+  if (upcomingGrid) renderPageEvents(upcomingGrid, future);
   const pastGrid = document.querySelector("[data-past-events]");
-  if (pastGrid) pastGrid.innerHTML = past.length ? past.map((event) => eventCard(event, true)).join("") : '<p class="muted-copy">Qui troverai le Wellness Experience concluse.</p>';
+  if (pastGrid) renderPageEvents(pastGrid, past, true);
 });

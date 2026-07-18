@@ -55,7 +55,7 @@
               <li class="nav-item"><a class="nav-link${active("home")} href="index.html">Home</a></li>
               <li class="nav-item"><a class="nav-link${active("eventi")} href="eventi.html">Eventi</a></li>
               <li class="nav-item"><a class="nav-link${active("chi-sono")} href="chi-sono.html">Chi sono</a></li>
-              <li class="nav-item"><a class="nav-link${active("benessere")} href="esercizi-benessere.html">Esercizi &amp; Benessere</a></li>
+              <li class="nav-item"><a class="nav-link${active("benessere")} href="esercizi-benessere.html">Esercizi &amp; Benessere <span class="coming-soon-badge">Coming soon</span></a></li>
               <li class="nav-item"><a class="nav-link${active("piani")} href="piani-personalizzati.html">Piani personalizzati <span class="coming-soon-badge">Coming soon</span></a></li>
               <li class="nav-item"><a class="nav-link${active("area")} href="area-wellness.html">Area Wellness <span class="coming-soon-badge">Coming soon</span></a></li>
               <li class="nav-item"><a class="nav-link${active("gift")} href="gift-card.html">Gift Card <span class="coming-soon-badge">Coming soon</span></a></li>
@@ -71,7 +71,7 @@
     <footer class="site-footer">
       <div class="container-fluid section-container footer-inner">
         <a class="footer-logo-image" href="index.html" aria-label="Eleonora Wellness - Home"><img src="${logo}" alt="Eleonora Wellness" width="1200" height="400" loading="lazy"></a>
-        <nav class="footer-links" aria-label="Link nel footer"><a href="faq.html">FAQ</a><a href="contatti.html">Contatti</a></nav>
+        <nav class="footer-links" aria-label="Link nel footer"><a href="faq.html">FAQ</a><a href="contatti.html">Contatti</a><a data-community-link href="https://chat.whatsapp.com/Jxel2DSOmuG6aWNSsxBeNo" target="_blank" rel="noopener noreferrer">Community WhatsApp</a></nav>
         <p class="medical-note">Consulta sempre il tuo medico prima di iniziare un nuovo programma di allenamento.</p>
         <p class="footer-small">© <span id="currentYear"></span> Eleonora Wellness. Tutti i diritti riservati.</p>
       </div>
