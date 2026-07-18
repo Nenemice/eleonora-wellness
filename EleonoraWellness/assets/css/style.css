@@ -816,3 +816,71 @@ a.btn,button.btn{flex:0 0 auto!important}
   .home-event-slide{grid-template-columns:1fr}
   .event-poster-link{width:165px;height:245px;margin-inline:auto}
 }
+
+/* Fusione pastello tra testo e fotografia della hero, senza stacco rettangolare */
+.hero-visual{isolation:isolate;overflow:visible}
+.hero-person{z-index:0}
+.hero-visual::before{
+  content:"";
+  position:absolute;
+  z-index:2;
+  top:0;
+  bottom:0;
+  left:-230px;
+  width:520px;
+  pointer-events:none;
+  background:
+    radial-gradient(ellipse at 20% 16%,rgba(235,190,218,.26),transparent 27%),
+    radial-gradient(ellipse at 38% 44%,rgba(199,133,190,.30),transparent 35%),
+    radial-gradient(ellipse at 14% 78%,rgba(157,87,151,.36),transparent 32%),
+    linear-gradient(90deg,#5b2c55 0%,rgba(105,56,98,.90) 32%,rgba(121,72,113,.52) 62%,rgba(121,72,113,.16) 82%,transparent 100%);
+  filter:saturate(.88);
+}
+
+/* Home desktop: immagini grandi a destra, testi e pulsanti a sinistra */
+@media(min-width:992px){
+  .quick-about-body{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 210px;
+    align-items:center;
+    gap:24px;
+  }
+  .quick-about-body>img{
+    width:210px;
+    height:285px;
+    order:2;
+  }
+  .quick-about-copy{
+    min-width:0;
+    align-items:center;
+    justify-content:center;
+    order:1;
+  }
+  .quick-about-copy p{margin-bottom:18px}
+  .home-event-slide{
+    grid-template-columns:minmax(0,1fr) 195px;
+    align-items:center;
+    gap:24px;
+  }
+  .home-event-slide .event-poster-link{
+    width:195px;
+    height:290px;
+    order:2;
+  }
+  .home-event-slide .event-card-copy{
+    align-items:center;
+    justify-content:center;
+    order:1;
+  }
+  .event-card-copy p{max-width:310px}
+}
+
+@media(max-width:991.98px){
+  .hero-visual::before{
+    left:0;
+    width:100%;
+    background:
+      radial-gradient(ellipse at 26% 34%,rgba(210,153,201,.24),transparent 38%),
+      linear-gradient(180deg,rgba(94,48,87,.35),rgba(54,27,51,.62) 55%,rgba(31,16,29,.88));
+  }
+}
