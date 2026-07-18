@@ -712,3 +712,19 @@ button.btn{
   a.btn,button.btn{width:min(220px,100%)!important;min-width:min(220px,100%)!important;max-width:min(220px,100%)!important;flex-basis:min(220px,100%)!important}
   .hero-buttons,.cta-buttons,.contact-actions,.review-actions{align-items:center!important}
 }
+
+/* Icone specifiche nei riquadri: sostituiscono definitivamente le spunte */
+.detail-icon-grid li[data-icon="mat"]::before{content:"🧘‍♀️"}
+.detail-icon-grid li[data-icon="clothing"]::before{content:"👕"}
+.detail-icon-grid li[data-icon="shoes"]::before{content:"👟"}
+.detail-icon-grid li[data-icon="water"]::before{content:"💧"}
+.detail-icon-grid li[data-icon="swim"]::before{content:"🏊‍♀️"}
+.detail-icon-grid li[data-icon="sandals"]::before{content:"🩴"}
+.detail-icon-grid li[data-icon="shower"]::before{content:"🚿"}
+.detail-icon-grid li[data-icon="bag"]::before{content:"👜"}
+.detail-icon-grid li[data-icon="energy"]::before{content:"⚡"}
+.detail-icon-grid li[data-icon="relax"]::before{content:"🌿"}
+.detail-icon-grid li[data-icon="movement"]::before{content:"🤸‍♀️"}
+.detail-icon-grid li[data-icon="community"]::before{content:"👭"}
+.detail-icon-grid li[data-icon="heart"]::before{content:"💗"}
+.detail-icon-grid li[data-icon="lake"]::before{content:"🌅"}
