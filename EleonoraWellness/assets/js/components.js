@@ -1,5 +1,44 @@
 (() => {
   const page = document.body.dataset.page || "";
+  const siteUrl = "https://www.eleonorawellness.it";
+  const pagePath = location.pathname.split("/").pop() || "index.html";
+  const canonicalUrl = pagePath === "index.html" ? `${siteUrl}/` : `${siteUrl}/${pagePath}`;
+  const pageTitle = document.title;
+  const pageDescription = document.querySelector('meta[name="description"]')?.content || "Percorsi personalizzati, movimento ed esperienze di benessere con Eleonora, Personal Trainer e Wellness Coach.";
+  const defaultSocialImage = `${siteUrl}/assets/images/logo-eleonora-wellness-v2.webp`;
+
+  const addHeadElement = (selector, html) => {
+    if (!document.head.querySelector(selector)) document.head.insertAdjacentHTML("beforeend", html);
+  };
+  addHeadElement('meta[name="description"]', `<meta name="description" content="${pageDescription}">`);
+  addHeadElement('link[rel="canonical"]', `<link rel="canonical" href="${canonicalUrl}">`);
+  addHeadElement('meta[property="og:type"]', '<meta property="og:type" content="website">');
+  addHeadElement('meta[property="og:locale"]', '<meta property="og:locale" content="it_IT">');
+  addHeadElement('meta[property="og:site_name"]', '<meta property="og:site_name" content="Eleonora Wellness">');
+  addHeadElement('meta[property="og:title"]', `<meta property="og:title" content="${pageTitle}">`);
+  addHeadElement('meta[property="og:description"]', `<meta property="og:description" content="${pageDescription}">`);
+  addHeadElement('meta[property="og:url"]', `<meta property="og:url" content="${canonicalUrl}">`);
+  addHeadElement('meta[property="og:image"]', `<meta property="og:image" content="${defaultSocialImage}">`);
+  addHeadElement('meta[name="twitter:card"]', '<meta name="twitter:card" content="summary_large_image">');
+
+  if (["area", "piani", "gift", "benessere", "faq"].includes(page)) {
+    addHeadElement('meta[name="robots"]', '<meta name="robots" content="noindex, follow">');
+  }
+
+  if (!document.head.querySelector('[data-global-schema]')) {
+    const schema = document.createElement("script");
+    schema.type = "application/ld+json";
+    schema.dataset.globalSchema = "true";
+    schema.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        { "@type": "WebSite", "@id": `${siteUrl}/#website`, "url": `${siteUrl}/`, "name": "Eleonora Wellness", "inLanguage": "it-IT" },
+        { "@type": ["LocalBusiness", "HealthAndBeautyBusiness"], "@id": `${siteUrl}/#business`, "name": "Eleonora Wellness", "url": `${siteUrl}/`, "image": defaultSocialImage, "telephone": "+393519249781", "priceRange": "€€", "sameAs": ["https://www.instagram.com/eleonoramemole/", "https://maps.app.goo.gl/sXKbxazbgANV4qG49"] },
+        { "@type": "Person", "@id": `${siteUrl}/#eleonora`, "name": "Eleonora", "jobTitle": "Personal Trainer e Wellness Coach", "worksFor": { "@id": `${siteUrl}/#business` }, "url": `${siteUrl}/chi-sono.html` }
+      ]
+    });
+    document.head.append(schema);
+  }
   const active = (name) => page === name ? ' active" aria-current="page' : '"';
   const logo = "assets/images/logo-eleonora-wellness-v2.webp";
   const instagram = "https://www.instagram.com/eleonoramemole/";
