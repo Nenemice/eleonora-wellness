@@ -448,3 +448,58 @@ body[data-page="contatti"] .contact-content .privacy-note{color:#776473!importan
 .coming-box h1{color:#4b2945}.coming-box p,.coming-box .muted-copy{color:#685263}
 @media(max-width:991.98px){.event-detail-grid{grid-template-columns:1fr}.event-detail-grid>img{max-width:440px}}
 @media(max-width:575.98px){.detail-icon-grid li::before{width:42px;height:42px;font-size:1.3rem}.events-column .event-list-card{grid-template-columns:105px minmax(0,1fr)}.events-column .event-list-image img{height:190px}}
+
+/* Correzione finale dei riquadri: icone in colonna, senza cerchi bianchi né testo coperto */
+.icon-card-grid>div,
+.detail-icon-grid li{
+  display:grid;
+  grid-template-columns:38px minmax(0,1fr);
+  align-items:center;
+  column-gap:12px;
+  padding:13px 15px!important;
+}
+.icon-card-grid>div::before,
+.detail-icon-grid li::before{
+  position:static;
+  width:36px;
+  height:36px;
+  margin:0;
+  border:0;
+  border-radius:10px;
+  color:var(--gold-light);
+  background:linear-gradient(145deg,rgba(218,87,169,.28),rgba(200,164,107,.16));
+  box-shadow:inset 0 0 0 1px rgba(231,194,132,.26);
+  transform:none;
+  font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif;
+  font-size:1.12rem;
+  line-height:1;
+}
+.icon-card-grid>div strong,
+.icon-card-grid>div span{grid-column:2}
+.icon-card-grid>div strong{align-self:end}
+.icon-card-grid>div span{align-self:start}
+
+/* Quattro informazioni dell'evento raccolte 2 x 2 subito sotto la hero */
+.event-detail .event-facts{padding:18px 0 22px}
+.event-detail .facts-grid{width:min(100% - 48px,820px);grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.event-detail .facts-grid>div{min-height:88px;border:1px solid rgba(224,183,116,.28)!important}
+
+/* Hero e galleria dell'evento */
+.event-detail .event-detail-grid{grid-template-columns:minmax(0,1fr) minmax(420px,500px)}
+.event-detail .event-detail-grid>img{max-height:620px}
+.event-gallery-near-hero{padding-top:48px}
+.event-gallery-near-hero .section-heading{margin-bottom:18px}
+
+/* Testi introduttivi subito sotto i titoli dei due pannelli */
+.feature-panel h2{margin-bottom:8px}
+.feature-panel>p:first-of-type{margin:0 4px 16px}
+
+@media(max-width:991.98px){
+  .event-detail .event-detail-grid{grid-template-columns:1fr}
+  .event-detail .event-detail-grid>img{width:min(100%,500px);margin-inline:auto}
+}
+@media(max-width:575.98px){
+  .event-detail .facts-grid{width:min(100% - 24px,540px);grid-template-columns:1fr}
+  .icon-card-grid>div,.detail-icon-grid li{grid-template-columns:34px minmax(0,1fr);column-gap:10px}
+  .icon-card-grid>div::before,.detail-icon-grid li::before{width:34px;height:34px;font-size:1rem}
+}
