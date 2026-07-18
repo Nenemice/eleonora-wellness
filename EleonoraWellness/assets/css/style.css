@@ -613,3 +613,51 @@ body[data-page="contatti"] .contact-content .privacy-note{color:#776473!importan
   .memory-controls [data-memory-next]{right:6px}
   .memory-lightbox-close{top:8px;right:8px}
 }
+
+/* Dimensione unica per tutti i pulsanti principali del sito */
+:root{--site-button-width:274px;--site-button-height:58px}
+a.btn:not(.btn-book-navbar),
+button.btn{
+  width:min(var(--site-button-width),100%);
+  min-width:min(var(--site-button-width),100%);
+  min-height:var(--site-button-height);
+  padding:.7rem 1.15rem;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  font-size:.68rem;
+  line-height:1.25;
+}
+.event-detail .event-hero-actions .event-cta-button{
+  width:min(var(--site-button-width),100%);
+  min-width:min(var(--site-button-width),100%);
+  min-height:var(--site-button-height);
+  padding:.7rem 1.15rem;
+  font-size:.68rem;
+}
+.hero-buttons,.cta-buttons,.contact-actions,.review-actions{align-items:center}
+.hero-buttons .btn,.cta-buttons .btn,.contact-actions .btn,.review-actions .btn,
+.event-list-copy .btn,.community-compact .btn{margin-top:0}
+.contact-form .submit-button{display:flex;margin-inline:auto}
+
+/* La locandina è visibile nella prima schermata su desktop e mobile */
+@media(min-width:992px){
+  .event-detail .event-detail-grid>img{
+    align-self:start;
+    max-height:min(700px,calc(100vh - 115px));
+  }
+}
+@media(max-width:991.98px){
+  .event-detail .event-detail-grid>img{
+    order:-1;
+    width:min(100%,430px);
+    max-height:clamp(280px,46vh,390px);
+    margin-inline:auto;
+    object-position:top center;
+  }
+  .event-detail .event-hero-copy{padding-top:0}
+}
+@media(max-width:575.98px){
+  :root{--site-button-width:100%}
+  a.btn:not(.btn-book-navbar),button.btn{max-width:100%}
+}
