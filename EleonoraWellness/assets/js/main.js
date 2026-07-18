@@ -50,4 +50,38 @@ document.addEventListener("DOMContentLoaded", () => {
       if (menu?.classList.contains("show") && window.bootstrap) bootstrap.Collapse.getOrCreateInstance(menu).hide();
     });
   });
+
+  const memoryGallery = document.querySelector("[data-memory-gallery]");
+  if (memoryGallery) {
+    const track = memoryGallery.querySelector("[data-memory-track]");
+    const slides = [...memoryGallery.querySelectorAll(".memory-slide")];
+    const counter = memoryGallery.querySelector("[data-memory-count]");
+    let index = 0;
+    const visibleSlides = () => window.matchMedia("(max-width: 575.98px)").matches ? 1 : 2;
+    const showMemorySlide = (nextIndex) => {
+      const visible = visibleSlides();
+      const maxIndex = Math.max(0, slides.length - visible);
+      index = Math.min(Math.max(nextIndex, 0), maxIndex);
+      track.style.transform = `translateX(-${index * (100 / visible)}%)`;
+      const end = Math.min(index + visible, slides.length);
+      counter.textContent = visible === 1 ? `${index + 1} / ${slides.length}` : `${index + 1}–${end} / ${slides.length}`;
+    };
+    memoryGallery.querySelector("[data-memory-prev]").addEventListener("click", () => showMemorySlide(index - 1));
+    memoryGallery.querySelector("[data-memory-next]").addEventListener("click", () => showMemorySlide(index + 1));
+    window.addEventListener("resize", () => showMemorySlide(index), { passive: true });
+    showMemorySlide(0);
+
+    const lightbox = document.querySelector("[data-memory-lightbox]");
+    const largeImage = lightbox?.querySelector("[data-memory-large]");
+    slides.forEach((slide) => slide.addEventListener("click", () => {
+      if (!lightbox || !largeImage) return;
+      largeImage.src = slide.dataset.memorySrc;
+      largeImage.alt = slide.dataset.memoryAlt || "";
+      lightbox.showModal();
+    }));
+    lightbox?.querySelector("[data-memory-close]")?.addEventListener("click", () => lightbox.close());
+    lightbox?.addEventListener("click", (event) => {
+      if (event.target === lightbox) lightbox.close();
+    });
+  }
 });
